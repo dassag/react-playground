@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-const SideNav = () => {
+const SideNav = (props) => {
   const [counter, setCounter] = useState(0);
 
   const handler = () => {
@@ -15,7 +15,10 @@ const SideNav = () => {
   return (
     <>
       <h3>SideNav Component: {counter}</h3>
-      <button onClick={handler}>Increment</button>
+      {props.render('Sagar')}
+      <button className='btn btn-primary' onClick={handler}>
+        Increment
+      </button>
     </>
   );
 };

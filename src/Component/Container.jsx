@@ -1,6 +1,16 @@
 import React from 'react';
 
+const provideStyle = () => {
+  return {
+    border: '2px solid red',
+    height: '5rem',
+    backgroundColor: '#ddd',
+  };
+};
+
 const Container = (props) => {
+  const divStyle = provideStyle();
+
   const tooltip = () => {
     return 'tooltip from function';
   };
@@ -32,12 +42,22 @@ const Container = (props) => {
         </ul>
       </h3>
       {/* display object using JSON api */}
-      <pre>{JSON.stringify(book, null, 2)}</pre>
-      <button onClick={handleClick}>Click Here</button>
-      <button onClick={(event) => handleClickWithArguments(24, event)}>
+      <div style={divStyle}>
+        <pre>{JSON.stringify(book, null, 2)}</pre>
+        <button className='btn btn-primary' onClick={handleClick}>
+          Click Here
+        </button>
+      </div>
+
+      <button
+        className='btn btn-primary'
+        onClick={(event) => handleClickWithArguments(24, event)}
+      >
         Click Here
       </button>
-      <button onClick={() => props.handler(2022)}>Click Props</button>
+      <button className='btn btn-primary' onClick={() => props.handler(2022)}>
+        Click Props
+      </button>
       <p>
         {props.message} {props.year}
       </p>

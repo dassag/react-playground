@@ -10,7 +10,9 @@ const Navbar = (props) => {
       <h3 className='css-test-class' title='Navbar'>
         Navbar Component {props.children}
       </h3>
-      <button onClick={navBarHandler}>Click Here</button>
+      <button className='btn btn-primary' onClick={navBarHandler}>
+        Click Here
+      </button>
     </>
   );
 };
